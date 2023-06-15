@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zoo Manager - Animals</title>
+</head>
+<body>
+    <h1>Animals</h1>
+    <form action="/animals" method="get">
+        <label for="species">Species:</label>
+        <input type="text" id="species" name="species">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age">
+        <button type="submit">Filter</button>
+    </form>
+    <table>
+        <tr>
+            <th>Species</th>
+            <th>Breed</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        {% for animal in animals %}
+            <tr>
+                <td>{{ animal.species }}</td>
+                <td>{{ animal.breed }}</td>
+                <td>{{ animal.age }}</td>
+                <td>{{ animal.gender }}</td>
+                <td><a href="/animal/{{ animal.id }}">Edit</a></td>
+                <td>
+                    <form action="/animal/{{ animal.id }}" method="post" style="display: inline;">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" style="color: red;">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

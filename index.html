@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zoo Manager</title>
+</head>
+<body>
+    <h1>Welcome to Zoo Manager</h1>
+    <h2>Animal Species:</h2>
+    <ul>
+        {% for animal_count in animal_counts %}
+            <li><a href="/animals?species={{ animal_count[0] }}">{{ animal_count[0] }} - {{ animal_count[1] }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

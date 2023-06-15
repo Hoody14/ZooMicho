@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zoo Manager - Animal Details</title>
+</head>
+<body>
+    <h1>Animal Details</h1>
+    <form action="/animal/{{ animal.id }}" method="post">
+        <label for="species">Species:</label>
+        <input type="text" id="species" name="species" value="{{ animal.species }}">
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" name="breed" value="{{ animal.breed }}">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" value="{{ animal.age }}">
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" value="{{ animal.gender }}">
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
